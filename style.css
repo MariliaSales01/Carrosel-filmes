@@ -2,19 +2,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background: rgb(0, 0, 0);
 }
 
 html,body{ 
     width: 100%;
     height: 100%;
 }
-
-body{
+.nav-bar{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    margin-top: 20px;
+}
+.nav-bar a{
+    text-decoration: none;
+    color: aliceblue;
+}
+.nav-bar ul{
+    display: contents;
+}
+.nav-bar i{
+    font-size: 15px;
+    cursor: pointer;
+}
+main{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items:end;
     padding: 30px 10px;
-    background: rgb(0, 0, 0);
+    
     transition: background 0.4s ease-in;
 }
 
@@ -23,14 +40,14 @@ input[type=radio]{
 }
 
 img{
-    width: 200%;
-    height: 200%;
+    width: 100%;
+    height: 100%;
     border-radius: 10px;
     object-fit: cover;
 }
 
 .card{
-    width: 100%;
+    width: 60%;
     height: 100%;
     left: 0;
     right: 0;
@@ -39,11 +56,7 @@ img{
     transition: transform 0.4s ease;
 }
 
-.input-slider input{
-    position:absolute;
-}
-
-input-slider{
+.container{
     width: 100%;
     height: 100%;
     max-height: 600px;
@@ -60,22 +73,24 @@ input-slider{
     width: 100%;
     height: 100%;
     display: flex;
-    margin-bottom: 20px;
+    margin-top: 200px;
 }
 
 #item-1:checked ~ .cards #song-3,
 #item-2:checked ~ .cards #song-1,
 #item-3:checked ~ .cards #song-2{
-    transform: translate(-50%) scale(0.8);
+    transform: translate(-40%) scale(0.8);
     opacity: 0.4;
     z-index:0;
 }
+
 #item-1:checked ~ .cards #song-2,
 #item-2:checked ~ .cards #song-3,
 #item-3:checked ~ .cards #song-1{
-    transform: translate(50%) scale(0.8);
+    transform: translate(40%) scale(0.8);
     opacity: 0.4;
     z-index:0;
+    position: absolute;
 }
 #item-1:checked ~ .cards #song-1,
 #item-2:checked ~ .cards #song-2,
@@ -83,6 +98,7 @@ input-slider{
     transform: translate(0) scale(1);
     opacity: 1;
     z-index:1;
+    position: absolute;
 }
 #item-1:checked ~ .cards #song-1 img,
 #item-2:checked ~ .cards #song-2 img,
