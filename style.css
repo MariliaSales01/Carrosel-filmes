@@ -79,7 +79,7 @@ header{
 
 .content{
     position: relative;
-    max-width:500px ;
+    max-width: 550px;
     display: none;
     visibility: hidden;
     transform: scale(0);
@@ -128,9 +128,10 @@ header{
 .banner p{
     font-size: 1rem;
     font-weight: 400;
-    line-height: 1.5rem;
-    color: #ffffff;
+    line-height: 1rem;
+    color: rgb(192, 192, 192);
     margin: 10px 0 20px;
+    transform: scale(1);
 }
 
 .banner button{
@@ -158,83 +159,87 @@ header{
     border: 1px solid  rgb(255, 255, 255, 0.5);
 }
 
-.slide{
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    padding-left: 100px;
-    transition: background 0.4s ease-in;
-    padding-right: 200px;
+footer{
+    background-color: #24262b;
+    padding: 70px 0;
 }
 
-input[type=radio]{
-    display: none;
-}
-
-.card img{
-    width: 100%;
-    height: 300px;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.card{
-    width: 70%;
-    height: 100%;
-    left: 0;
-    right: 0;
+.nav-footer{
+    max-width: 1000px;
     margin: auto;
-    cursor: pointer;
-    transition: transform 0.4s ease;
 }
-
-.container{
-    width: 70%;
-    height: 100%;
-    max-height: 600px;
-    max-width: 600px;
+.row{
     display: flex;
-    transform-style: preserve-3d;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+    flex-wrap: wrap;
 }
 
-.cards{
+ul{
+    list-style: none;
+}
+
+.footer-col{
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4{
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
     position: relative;
-    width: 70%;
-    height: 50%;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: rgb(132, 0, 255);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a{
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #bbbbbb;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.social-links ul {
     display: flex;
-    margin-top:50px;
 }
 
-#item-1:checked ~ .cards #song-3,
-#item-2:checked ~ .cards #song-1,
-#item-3:checked ~ .cards #song-2{
-    transform: translate(-40%) scale(0.8);
-    opacity: 0.4;
-    z-index:0;
+.footer-col .social-links a:hover{
+    color: #24262b;
+    background-color: #ffffff;
 }
-
-#item-1:checked ~ .cards #song-2,
-#item-2:checked ~ .cards #song-3,
-#item-3:checked ~ .cards #song-1{
-    transform: translate(40%) scale(0.8);
-    opacity: 0.4;
-    z-index:0;
-    position: absolute;
-}
-#item-1:checked ~ .cards #song-1,
-#item-2:checked ~ .cards #song-2,
-#item-3:checked ~ .cards #song-3{
-    transform: translate(0) scale(1);
-    opacity: 1;
-    z-index:1;
-    position: absolute;
-}
-#item-1:checked ~ .cards #song-1 img,
-#item-2:checked ~ .cards #song-2 img,
-#item-3:checked ~ .cards #song-3 img{
-   box-shadow: 0px 0px 5px 0px rgba(81,81,81,0.47); 
-}
-
